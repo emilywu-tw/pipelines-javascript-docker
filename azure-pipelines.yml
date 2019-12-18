@@ -6,7 +6,7 @@ pool:
 
 variables:
   imageName: 'emilyw26/pipelines-docker'
-  dockerHub: 'emilyw26'
+  dockerHub: 'personal-docker'
 
 steps:
 - task: Docker@2
