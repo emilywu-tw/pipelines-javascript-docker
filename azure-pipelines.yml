@@ -5,7 +5,8 @@ pool:
   vmImage: 'Ubuntu-16.04'
 
 variables:
-  imageName: 'pipelines-javascript-docker'
+  imageName: 'pipelines-docker'
+  dockerHub: 'emilyw26'
 
 steps:
 - task: Docker@2
@@ -14,13 +15,13 @@ steps:
     repository: $(imageName)
     command: build
     Dockerfile: app/Dockerfile
-# - task: Docker@2
-#   displayName: Push image
-#   inputs:
-#     containerRegistry: |
-#       $(dockerHub)
-#     repository: $(imageName)
-#     command: push
-#     tags: |
-#       test1
-#       test2
+- task: Docker@2
+  displayName: Push image
+  inputs:
+    containerRegistry: |
+      $(dockerHub)
+    repository: $(imageName)
+    command: push
+    tags: |
+      test1
+      test2
