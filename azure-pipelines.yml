@@ -5,8 +5,7 @@ pool:
   vmImage: 'Ubuntu-16.04'
 
 variables:
-  imageName: 'pipelines-docker'
-  dockerHub: 'emilyw26'
+  imageName: 'emilyw26/pipelines-docker'
 
 steps:
 - task: Docker@2
